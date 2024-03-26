@@ -25,7 +25,7 @@ function Login() {
       const sanitizedUsername = sanitizeInput(username, 'Username');
       const sanitizedPassword = sanitizeInput(password, 'Password');
 
-      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/login', {
+      const response = await axios.post('https://chatapp.review24info.online/login', {
         username: sanitizedUsername,
         password: sanitizedPassword,
       });

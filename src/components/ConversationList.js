@@ -12,7 +12,7 @@ function ConversationList({ onSelectConversation }) {
   const fetchConversations = async () => {
     try {
       const username = localStorage.getItem('username');
-      const response = await axios.get(`https://stunneagle-chat-2477de19fb41.herokuapp.com/loadconversations/${username}`);
+      const response = await axios.get(`https://chatapp.review24info.online/loadconversations/${username}`);
       if (response.status === 200) {
         setConversations(response.data.conversations);
       } else {
@@ -29,7 +29,7 @@ function ConversationList({ onSelectConversation }) {
 
   const handleCreate = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/createconversation', {
+      const response = await axios.post('https://chatapp.review24info.online/createconversation', {
         name: newConversationName,
         participants: [localStorage.getItem('username')]
       });
@@ -47,7 +47,7 @@ function ConversationList({ onSelectConversation }) {
 
   const handleJoin = async () => {
     try {
-      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/joinconversation', {
+      const response = await axios.post('https://chatapp.review24info.online/joinconversation', {
         conversationName: joinConversationName,
         username: localStorage.getItem('username')
       });
@@ -65,7 +65,7 @@ function ConversationList({ onSelectConversation }) {
   
   const handleDelete = async (conversationName) => {
     try {
-      const response = await axios.delete(`http://localhost:5001/deleteconversation/${conversationName}`);
+      const response = await axios.delete(`https://chatapp.review24info.online/deleteconversation/${conversationName}`);
   
       if (response.status === 200) {
         setConversations(prevConversations => prevConversations.filter(conv => conv !== conversationName));

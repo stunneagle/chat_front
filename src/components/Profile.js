@@ -14,7 +14,7 @@ function EditProfile() {
       try {
         const username = localStorage.getItem("username");
         const response = await axios.get(
-          `http://localhost:5001/userProfile/${username}`
+          `https://chatapp.review24info.online/userProfile/${username}`
         );
 
         if (response && response.data) {
@@ -59,7 +59,7 @@ function EditProfile() {
         password: password
       };
       const response = await axios.put(
-        `http://localhost:5001/updateProfile/${username}`,
+        `https://chatapp.review24info.online/updateProfile/${username}`,
         updatedProfile
       );
       console.log("Profile updated successfully:", response.data);

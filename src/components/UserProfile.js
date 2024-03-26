@@ -9,7 +9,7 @@ function UserProfile() {
     const fetchUserProfile = async () => {
       try {
         const username = localStorage.getItem('username');
-        const response = await axios.get(`http://localhost:5001/userProfile/${username}`); 
+        const response = await axios.get(`https://chatapp.review24info.online/userProfile/${username}`); 
         
         if (response && response.data) {
           setUserProfile(response.data); // Set user profile data in state

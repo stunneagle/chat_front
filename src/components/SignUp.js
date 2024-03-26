@@ -15,7 +15,7 @@ function SignUp() {
   useEffect(() => {
     const isLoggedIn = checkUserName();
     if (isLoggedIn){
-      window.location.href = "/dashboard/1";
+     // window.location.href = "/dashboard/1";
     }
 
   }, []);
@@ -30,7 +30,7 @@ function SignUp() {
       const sanitizedFullName = sanitizeInput(fullName, 'Full Name');
   
       // Submit sanitized data to the server
-      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/register', {
+      const response = await axios.post('https://chatapp.review24info.online/register', {
         username: sanitizedUsername,
         password: sanitizedPassword,
         email: sanitizedEmail,

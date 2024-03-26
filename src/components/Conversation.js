@@ -9,7 +9,7 @@ function Conversation({ conversationName }) {
   const [messageInput, setMessageInput] = useState('');
 
   useEffect(() => {
-    const socket = io('https://stunneagle-chat-2477de19fb41.herokuapp.com/', {
+    const socket = io('https://chatapp.review24info.online/', {
       auth: { token: localStorage.getItem('token') },
     });
 
@@ -17,7 +17,7 @@ function Conversation({ conversationName }) {
 
     const fetchMessages = async () => {
       try {
-        const response = await fetch(`https://stunneagle-chat-2477de19fb41.herokuapp.com/messages/${activeConversationName}`);
+        const response = await fetch(`https://chatapp.review24info.online/messages/${activeConversationName}`);
         if (response.ok) {
           const data = await response.json();
           setMessages(data.messages);
@@ -49,7 +49,7 @@ function Conversation({ conversationName }) {
   };
 
   const sendMessage = () => {
-    const socket = io('https://stunneagle-chat-2477de19fb41.herokuapp.com', {
+    const socket = io('https://chatapp.review24info.online', {
       auth: { token: localStorage.getItem('token') },
     });
     socket.emit('sendMessage', { text: messageInput, sender: activeUser, conversationName: activeConversationName });
@@ -58,7 +58,7 @@ function Conversation({ conversationName }) {
 
   const leaveConversation = async () => {
     try {
-      const response = await fetch(`https://stunneagle-chat-2477de19fb41.herokuapp.com/leaveconversation/${activeConversationName}/${activeUser}`, {
+      const response = await fetch(`https://chatapp.review24info.online/leaveconversation/${activeConversationName}/${activeUser}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
