@@ -25,7 +25,7 @@ function Login() {
       const sanitizedUsername = sanitizeInput(username, 'Username');
       const sanitizedPassword = sanitizeInput(password, 'Password');
 
-      const response = await axios.post('https://stunneagle-back.netlify.app/login', {
+      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/login', {
         username: sanitizedUsername,
         password: sanitizedPassword,
       });

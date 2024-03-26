@@ -30,7 +30,7 @@ function SignUp() {
       const sanitizedFullName = sanitizeInput(fullName, 'Full Name');
   
       // Submit sanitized data to the server
-      const response = await axios.post('https://stunneagle-back.netlify.app/register', {
+      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/register', {
         username: sanitizedUsername,
         password: sanitizedPassword,
         email: sanitizedEmail,

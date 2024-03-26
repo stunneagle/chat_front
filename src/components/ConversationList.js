@@ -12,7 +12,7 @@ function ConversationList({ onSelectConversation }) {
   const fetchConversations = async () => {
     try {
       const username = localStorage.getItem('username');
-      const response = await axios.get(`https://stunneagle-back.netlify.app/loadconversations/${username}`);
+      const response = await axios.get(`https://stunneagle-chat-2477de19fb41.herokuapp.com/loadconversations/${username}`);
       if (response.status === 200) {
         setConversations(response.data.conversations);
       } else {
@@ -47,7 +47,7 @@ function ConversationList({ onSelectConversation }) {
 
   const handleJoin = async () => {
     try {
-      const response = await axios.post('https://stunneagle-back.netlify.app/joinconversation', {
+      const response = await axios.post('https://stunneagle-chat-2477de19fb41.herokuapp.com/joinconversation', {
         conversationName: joinConversationName,
         username: localStorage.getItem('username')
       });
